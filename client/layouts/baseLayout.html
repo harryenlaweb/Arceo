@@ -1,0 +1,30 @@
+<template name="baseLayout">
+	<nav class="navbar navbar-default">
+	  	<div class="container"> 		  		
+	  			<ul class="nav navbar-nav">
+						
+					{{#if currentUser}}	
+						<!--<li><a href="{{ pathFor 'turnos'}}">Turnos</a></li>	-->			
+						<li><a href="{{ pathFor 'profesionales'}}">Profesionales</a></li>
+						<li><a href="{{ pathFor 'tratamientos'}}">Tratamientos</a></li>										
+						<li><a href="{{ pathFor 'pacientes'}}">Pacientes</a></li>
+						<li><a href="{{ pathFor 'obras'}}">Obras</a></li>
+						<li><a href="{{ pathFor 'calendar'}}"><strong>Calendario</strong></a></li>
+					{{/if}}				
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+			      
+			      <li><a href="#">{{> loginButtons}}</a></li>
+			      <div class="navbar-header">
+				      <a href="{{ pathFor 'calendar'}}" class="navbar-brand">LOS CONSULTORIOS</a>
+				  </div>			      
+			      
+			    </ul>
+			
+		</div>
+	</nav>
+	<!--<div class="container">-->
+	<div class="container">
+		{{> yield}}	
+	</div>
+</template>
